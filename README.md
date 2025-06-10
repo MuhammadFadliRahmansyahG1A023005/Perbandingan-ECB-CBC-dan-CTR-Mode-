@@ -248,4 +248,55 @@ def encrypt_ctr(text):
     
     return ciphertext.hex(), decrypted
 ```
+📄 **Kode:**
+```HTML
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Perbandingan ECB, CBC, dan CTR Mode </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Perbandingan ECB, CBC, dan CTR Mode</h1>
 
+        <form method="post" class="form-grid">
+            <div class="form-group">
+                <label for="plaintext">Masukkan Plaintext:</label>
+                <textarea id="plaintext" name="plaintext" rows="4" required>{{ plaintext }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="mode">Pilih Mode:</label>
+                <select id="mode" name="mode" required>
+                    <option value="ECB" {% if mode == "ECB" %}selected{% endif %}>ECB</option>
+                    <option value="CBC" {% if mode == "CBC" %}selected{% endif %}>CBC</option>
+                    <option value="CTR" {% if mode == "CTR" %}selected{% endif %}>CTR</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <button type="submit">🔐 Enkripsi Sekarang</button>
+            </div>
+        </form>
+
+        {% if hasil %}
+        <div class="result">
+            <h2>📄 Hasil:</h2>
+            <p><strong>Plaintext:</strong> {{ plaintext }}</p>
+            <p><strong>Mode:</strong> {{ mode }}</p>
+            <p><strong>Ciphertext (hex):</strong> {{ hasil.ciphertext }}</p>
+            <p><strong>Decrypted Text:</strong> {{ hasil.decrypted }}</p>
+            <p><strong>Waktu Eksekusi:</strong> {{ hasil.time }} detik</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Proyek Kriptografi ECB, CBC, dan CTR Mode| Dibuat oleh [Kelompok 10]
+    </div>
+</body>
+</html>
+```
