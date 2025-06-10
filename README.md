@@ -5,19 +5,6 @@
 - CBC (Cipher Block Chaining): mode yang mengaitkan setiap blok dengan blok sebelumnya menggunakan XOR.
 - CTR (Counter): menggunakan counter yang berubah-ubah untuk mengenkripsi blok, memungkinkan enkripsi paralel.
 
-## 🗂️ Struktur Proyek
-AES_Encryption_Comparison/
-├── app.py                # Flask Web Server (mengatur routing dan tampilan)
-├── utils.py              # Fungsi enkripsi dan dekripsi untuk ECB, CBC, CTR
-├── templates/
-│   └── index.html        # Antarmuka HTML untuk input plaintext dan pilihan mode
-├── static/
-│   └── style.css         # (opsional) CSS untuk mempercantik UI
-├── requirements.txt      # Daftar pustaka yang dibutuhkan oleh Python
-└── README.md             # Dokumentasi proyek (file ini)
-
-
-
 ## 🎯 Tujuan Penelitian
 Tujuan utama proyek ini adalah untuk:
 
