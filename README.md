@@ -7,14 +7,15 @@
 
 ## 🗂️ Struktur Proyek
 AES_Encryption_Comparison/
-├── app.py                # Flask Web Server
+├── app.py                # Flask Web Server (mengatur routing dan tampilan)
 ├── utils.py              # Fungsi enkripsi dan dekripsi untuk ECB, CBC, CTR
 ├── templates/
-│   └── index.html        # Antarmuka pengguna untuk memasukkan plaintext
+│   └── index.html        # Antarmuka HTML untuk input plaintext dan pilihan mode
 ├── static/
-│   └── style.css         # (opsional) CSS
-├── README.md             # Dokumentasi GitHub
-└── requirements.txt      # Daftar pustaka Pyth
+│   └── style.css         # (opsional) CSS untuk mempercantik UI
+├── requirements.txt      # Daftar pustaka yang dibutuhkan oleh Python
+└── README.md             # Dokumentasi proyek (file ini)
+
 
 
 ## 🎯 Tujuan Penelitian
