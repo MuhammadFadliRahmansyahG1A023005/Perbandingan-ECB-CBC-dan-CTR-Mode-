@@ -79,4 +79,4 @@ yang ada antar interaksi komponen.
 
 
 ## 📌 Tampilan antarmuka
- <img src="https://github.com/MuhammadFadliRahmansyahG1A023005/Perbandingan-ECB-CBC-dan-CTR-Mode-/commit/a8f6a5355a9c743f070df02c82e2ee5d3590ac7d" width="180"/>
+ <img src="https://github.com/MuhammadFadliRahmansyahG1A023005/Perbandingan-ECB-CBC-dan-CTR-Mode-/blob/main/Cuplikan%20layar%202025-06-01%20224011.png" width="180"/>
