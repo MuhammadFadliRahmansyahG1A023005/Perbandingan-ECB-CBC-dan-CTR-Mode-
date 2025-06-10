@@ -42,3 +42,37 @@ format heksadesimal. Dari hasil pengujian, seluruh mode mampu mengembalikan plai
 ke bentuk semula setelah proses dekripsi, yang menunjukkan bahwa akurasi enkripsi-
 dekripsi mencapai 100% untuk ketiganya. Ini menunjukkan implementasi algoritma
 berjalan dengan benar dan stabil.
+
+## 🔐 Analisis keamanan atau kelemahan system
+da beberapa pertimbangan penting tentang aspek keamanan dan kemungkinan
+kelemahan algoritma AES saat menerapkan sistem enkripsi menggunakan mode ECB,
+CBC, dan CTR. Dalam hal keamanan, mode ECB (Electronic Codebook) dikenal memiliki
+kelemahan terbesar karena setiap blok plaintext yang sama akan menghasilkan blok
+ciphertext yang sama. Oleh karena itu, ECB tidak disarankan untuk digunakan ketika data
+sensitif atau polanya mudah ditebak dienkripsi karena pola data plaintext masih dapat
+dilihat pada hasil enkripsi.
+25
+Mode CBC (Cipher Block Chaining) berbeda dengan ECB karena setiap blok plaintext
+sebelum dienkripsi akan di-XOR dengan ciphertext blok sebelumnya. Dengan demikian,
+meskipun blok plaintext memiliki nilai yang sama, hasil ciphertext akan berbeda selama
+inisialisasi vector (IV). Namun, kelemahan CBC adalah paralelisme: proses dekripsi dan
+enkripsi dapat dilakukan secara bersamaan, tetapi enkripsi tidak, karena setiap blok
+bergantung pada hasil sebelumnya. Selain itu, serangan tertentu, seperti serangan padding
+oracle, masih dapat menyerang sistem jika IV tidak dikelola dengan aman.
+Namun, mode Counter (Counter) adalah salah satu yang paling aman dan fleksibel dari
+ketiganya. Seperti stream cipher, CTR meng-XOR plaintext dengan hasil enkripsi counter
+yang berubah setiap blok. Salah satu keuntungan utamanya adalah mendukung proses
+enkripsi dan dekripsi secara bersamaan, yang sangat efektif untuk informasi yang sangat
+besar. Namun, kelemahan utama CTR adalah mengelola counter dan nonce, atau angka
+yang digunakan sekali. Jika counter atau nonce digunakan lagi dalam dua pesan yang
+berbeda, itu dapat menimbulkan ancaman keamanan sistem secara keseluruhan karena
+penyerang dapat melakukan analisis XOR antar ciphertext untuk mendapatkan informasi
+tentang plaintext asli.
+
+## ⚙️ Arsitektur sistem atau logika algoritma
+Arsitektur Sistem dalam proyek yang dirancang merupakan simulasi enkripsi dan
+dekripsi teks menggunakan algoritma AES (Advanced Encryption Standard) dengan tiga
+mode operasi berbeda, yaitu ECB, CBC, dan CTR. Sistem dibangun menggunakan bahasa
+pemrograman Python dan mengandalkan pustaka kriptografi eksternal (seperti
+PyCryptodome) yang diakses melalui file utils.py. Dan juga sistem ini termasuk komponen
+yang ada antar interaksi komponen.
