@@ -32,3 +32,13 @@ ECB menghasilkan ciphertext yang masih mengandung pola dari plaintext karena set
 CBC dan CTR menyamarkan pola dengan baik, sehingga lebih aman untuk digunakan pada data sensitif.
 Waktu eksekusi menunjukkan bahwa CBC adalah yang tercepat, disusul CTR, dan terakhir ECB.
 Semua mode berhasil melakukan dekripsi dengan akurat, membuktikan bahwa fungsionalitas dasar mereka berjalan baik.
+
+Pengujian dilakukan untuk membandingkan performansi dari tiga mode enkripsi
+pada algoritma AES (Advanced Encryption Standard), yaitu ECB (Electronic Codebook),
+CBC (Cipher Block Chaining), dan CTR (Counter). Pengujian ini menggunakan input
+plaintext yang sama: "Muhammad Fadli Rahmansyah Salah Nasser Hasan Meqdam",
+dengan fokus utama pada akurasi dekripsi, waktu eksekusi, dan panjang ciphertext dalam
+format heksadesimal. Dari hasil pengujian, seluruh mode mampu mengembalikan plaintext
+ke bentuk semula setelah proses dekripsi, yang menunjukkan bahwa akurasi enkripsi-
+dekripsi mencapai 100% untuk ketiganya. Ini menunjukkan implementasi algoritma
+berjalan dengan benar dan stabil.
